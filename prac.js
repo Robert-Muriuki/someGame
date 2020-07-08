@@ -10,8 +10,8 @@ const playerWins = 'PLAYER WINS'
 
 let gameIsRunning = false
 
-const getPlayerChoice=function(){
-    const selection=prompt(`${ROCK}, ${PAPER}, ${SCISSORS}`).toUpperCase();
+const getPlayerChoice = () => {
+    const selection = prompt(`${ROCK}, ${PAPER}, ${SCISSORS}`).toUpperCase();
     if (
         selection !== ROCK &&
         selection !== PAPER &&
@@ -23,7 +23,7 @@ const getPlayerChoice=function(){
         return selection
 }
 
-const getComputerChoice = function(){
+const getComputerChoice = () =>{
     const randomValue = Math.random();
     if(randomValue < 0.34) {
         return ROCK
@@ -36,7 +36,7 @@ const getComputerChoice = function(){
     }
 }
 
-const getWinner = function(computer,player){
+const getWinner = (computer,player) => {
     if(computer === player){
         return draw;
     }
@@ -58,7 +58,7 @@ const getWinner = function(computer,player){
         }
 }
 
-startBtn.addEventListener('click',function(){
+startBtn.addEventListener('click',() => {
     if (gameIsRunning) {
         return;
     }
