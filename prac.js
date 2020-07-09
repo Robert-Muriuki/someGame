@@ -36,22 +36,22 @@ const getComputerChoice = () =>{
     }
 }
 
-const getWinner = (computer,player) => {
+const getWinner = (player,computer) => {
     if(computer === player){
         return draw;
     }
     else if(
-        computer === ROCK && player === PAPER ||
-        computer === SCISSORS && player === ROCK ||
-        computer === PAPER && player === SCISSORS
+        player === ROCK && computer === SCISSORS ||
+        player === PAPER && computer === ROCK ||
+        player === SCISSORS && computer === PAPER
         )
         {
             return playerWins;
         }
     else(
-        player === ROCK && computer === PAPER ||
-        player === SCISSORS && computer === ROCK ||
-        player === PAPER && computer === SCISSORS
+        computer === ROCK && player === SCISSORS ||
+        computer === PAPER && player === ROCK ||
+        computer === SCISSORS && player === PAPER
         )
         {
             return computerWins
@@ -69,7 +69,7 @@ startBtn.addEventListener('click',() => {
     const winner = getWinner(playerSelection,computerSelection)
     console.log(winner);
 
-    let message=`You picked ${playerSelection} and the computer picked ${computerSelection} therefore you `;
+    let message=`You picked ${playerSelection} and the computer picked ${computerSelection} therefore `;
     if(winner === draw){
         message += "you had a draw"
     }
